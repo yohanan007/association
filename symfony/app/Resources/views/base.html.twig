@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8" />
+       <title>{% block title %}hello{% endblock %}</title>
+       {% block stylesheets %}{% endblock %}
+       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+   </head>
+ 
+   <body>
+ 
+   <div class="container">
+   {% block content %}{% endblock %}
+   </div>
+     <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+            
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+            <!-- fin des liens bootstrap 4 -->
+       {% block javascripts %}{% endblock %}
+ 
+   </body>
+</html>

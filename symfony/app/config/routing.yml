@@ -1,0 +1,26 @@
+oc_externe:
+    resource: "@OCExterneBundle/Resources/config/routing.yml"
+    prefix:   /externe
+
+oc_user:
+    resource: "@OCUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+oc_gestion:
+    resource: "@OCGestionBundle/Resources/config/routing.yml"
+    prefix:   /gestion
+
+oc_auth:
+    resource: "@OCAuthBundle/Resources/config/routing.yml"
+    prefix:   /evenement
+
+oc_blog:
+    resource: "@OCBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
