@@ -1,0 +1,17 @@
+oc_externe_homepage:
+    path:     /bibliothequeImage
+    defaults: { _controller: OCExterneBundle:Default:index }
+    methods: [GET]
+
+oc_externe_inscription:
+    path:    /user
+    defaults: { _controller: OCExterneBundle:Default:user }
+    methods: [GET]
+
+oc_externe_receptImage:
+    path:    /reception/{user}/{idUser}/{mdpUser}
+    defaults: { _controller: OCExterneBundle:Default:reception }
+    methods: [POST]
+
+
+

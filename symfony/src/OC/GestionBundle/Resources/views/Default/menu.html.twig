@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+  <meta name="author" content="yohanan hirsch">
+  <meta name="description" content="index de la gestion du blog">
+  <title>index gestion</title>
+  <!-- lien bootstrap 4 -->
+   {%block stylesheets%}
+               <!-- Latest compiled and minified CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      {% endblock %}
+         {%block javascript%}    
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+            
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+            <!-- fin des liens bootstrap 4 -->
+            {%endblock%}
+    </head>
+                <body>
+                     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                      <!-- Brand/logo -->
+                      <a class="navbar-brand" href="../">index du site << --</a>
+                      
+                      <!-- Links -->
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link 1</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link 2</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link 3</a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <section>
+                        <hr>
+                        <article class="container">
+                            <h3>GESTION DU BLOG</h3>
+                        </article>
+                        <hr>
+                        <article class="container">
+                             <div class="list-group">
+                              <a href="section" class="list-group-item list-group-item-action">création d'une nouvelle page</a>
+                              <a href="section/menu" class="list-group-item list-group-item-action">gestion de page </a>
+                              <a href="article" class="list-group-item list-group-item-action">gestion d'article </a>
+                            </div> 
+                        </article>
+                        <hr>
+                        <article class='container'>
+                             <ul class="list-group">
+                              <li class="list-group-item active"><h4>GESTION UTILISATEUR</h4></li>
+                             <a href="../user/inscription" class="list-group-item list-group-item-action">creation d'un utilisateur </a>
+                              <a href="../user/administrateur" class="list-group-item list-group-item-action">modification d'un utilisateur </a>
+                            </ul> 
+                        </article>
+                        <hr>
+                        <article class="container">
+                                                         <ul class="list-group">
+                              <li class="list-group-item list-group-item-success"><h4>GESTION EVENEMEMNT</h4></li>
+                             <a href="../evenement/" class="list-group-item list-group-item-action">GESTION EVENEMEMNT </a>
+                              <a href="../evenement/creer" class="list-group-item list-group-item-action"> CREATION EVENEMEMNT </a>
+                            </ul> 
+                        </article>
+                        <hr>
+                        <article class="container">
+                            <h3>PAGE CREEE</h3>
+                        </article>
+                        <hr>
+                    </section>
+                </body>
+    </html>

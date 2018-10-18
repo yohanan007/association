@@ -1,0 +1,109 @@
+<html>
+    <head>
+      <title>information utilisateur avec id: {{ user.id }}</title>
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    </head>
+    <body>
+       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../../../">INDEX</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../../administrateur">LISTE UTILISATEURS</a>
+    </li>
+   
+  </ul>
+
+</nav>
+<hr>
+       <section>
+        <article class="container">
+
+  <ul class="list-group">
+    <li class="list-group-item active"><h5>INFORMATION UTILISATEUR ID: {{ user.id }}</h5></li>
+     <li class="list-group-item"><p><b>NOM:</b> <i>&nbsp; {{user.username}}</i></p></li>
+    <li class="list-group-item"><p><b>EMAIL:</b> <i> &nbsp;{{ user.email }}</i> </p></li>
+    <li class="list-group-item"><p><b>DATE DE NAISSANCE: </b> <i> &nbsp;{{ user.dateDeNaissance|date("m/d/Y") }}</i> </p></li>
+    <li class="list-group-item"><p><b>ADRESSE: </b> <i> &nbsp;{{ user.adresse }}</i> </p></li>
+    <li class="list-group-item"><p><b>VILLE: </b> <i> &nbsp;{{ user.ville }}</i> </p></li>
+  
+    <li class="list-group-item"><p><b>ROLES: </b> {% for role in user.roles %} <i> &nbsp;{{ role }}</i>{% endfor %}  </p></li>
+    
+    {% if user.enabled == false %}
+    <li class="list-group-item"><p><b>active: </b> <i> &nbsp; NON ACTIVE</i> </p></li>
+    {% elseif user.enabled == true %}
+    <li class="list-group-item"><p><b>active: </b> <i> &nbsp; ACTIVE</i> </p></li>
+    {% endif %}
+  </ul>
+</article>
+<article class="container">
+     <div class="btn-group">
+  <button type="button" class="btn btn-primary" id="active">
+      {% if user.enabled == false %}
+      Activé l'Utilisateur
+      {% elseif user.enabled == true %}
+      Desactivé l'utilisateur
+      {% endif %}
+      </button>
+  <button type="button" class="btn btn-warning" id="change">changé le role</button>
+  <a href="../modification/{{ user.id }}" class="btn btn-danger" id="modif">modifié des données</a>
+</div> 
+</article>
+</section>
+                <script>
+                    $(document).ready(function(){
+                        $("#active").click(function(){
+                            {% if user.enabled == true %}
+                            var active = true;
+                            {% elseif user.enabled == false %}
+                            var active = false;
+                            {% else %}
+                            var active = null;
+                            {% endif %}
+                            var id = {{ user.id }};
+                               var adresse = "../active?id=" + id + "&active=" + active;
+                               console.log("variable active : " + active);
+                               console.log("variable id :" + id);
+                               console.log("variable adresse " + adresse);
+                            $.get(adresse,function(data,status){
+                                console.log("data : " + data);
+                                console.log("status: "  + status);
+                                console.log("la page se rechargera dans 3s");
+                                setTimeout(function(){
+                                    location.reload();
+                                },3000);
+                            });
+                        });
+                        
+                        $('#change').click(function(){
+                           var id =  {{ user.id }};
+                           var adresse = "../role?id=" + id;
+                           console.log('id: ' + id);
+                           console.log('adresse : ' + adresse);
+                           $.get(adresse,function(data,status){
+                              console.log("data" + data);
+                              console.log("status"  + status);
+                              console.log("rechargement de la page dans 3s");
+                              setTimeout(function(){
+                                  location.reload();
+                              },3000);
+                           });
+                        });
+                        
+                    });
+                </script>
+    </body>
+</html>

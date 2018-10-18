@@ -1,0 +1,45 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+  <meta name="author" content="yohanan hirsch">
+  <meta name="description" content="index du gestionnaire des événemets du site">
+  <title>index gestion événement</title>
+  <!-- lien bootstrap 4 -->
+               <!-- Latest compiled and minified CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+            
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+            <!-- fin des liens bootstrap 4 -->
+    </head>
+    <body>
+        <section >
+            <hr>
+            <article class="container"><h3>inscription evenement: {{ evenement.nom }} </h3></article>
+            <hr>
+            <article class="container">
+                 <ul class="list-group">
+   <li class="list-group-item list-group-item-primary">  <center>    <h4>FORMULAIRE D'INSCRIPTION</h4> </center></li>
+  <li class="list-group-item list-group-item-info">      {{form(form)}} </li>
+  
+</ul> 
+                
+                
+            </article>
+        </section>
+        
+        
+  
+        </body>
+        </html>

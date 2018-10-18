@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <head>
+            <meta charset="utf-8">
+             {% for evenements in evenement %}
+            <title>
+                gestion evenement: {{ evenements.nom }}            
+            </title>
+           
+             <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+        </head>
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+              <a class="navbar-brand" href="../../../">INDEX</a>
+             <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../../">GESTION</a>
+                </li>
+               
+              </ul>
+            </nav>
+            <section>
+                <br>
+                <article class="container">
+                    
+                    <h1 class="bg-success text-white" style="text-align:center;">Rappel des informations</h1> 
+                   
+                </article>
+               <hr>
+               <hr>
+               <article class="container">
+                        <table class="table table-dark table-striped">
+                            <thead>
+                              <tr>
+                                <th>id</th>
+                                <th>Nom de l'évènement</th>
+                                <th>date de début</th>
+                                <th>date de fin</th>
+                                <th>date de création</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                  <td>{{ evenements.id }}</td>
+                                <td>{{ evenements.nom }}</td>
+                               
+                                <td>{{ evenements.dateDebut | date("m/d/Y") }}</td>
+                                <td>{{ evenements.dateFin | date("m/d/Y") }}</td>
+                                <td>{{ evenements.date | date("m/d/Y") }}</td>
+                              </tr>
+                            
+                            </tbody>
+                          </table>
+                   
+               </article>
+               <hr>
+               <hr>
+               <article class="container">
+                   <h4 class="bg-primary text-white" style="text-align:center;">lien de confirmation des inscrits</h4>
+                      <div class="list-group">
+                           {% for present in evenements.present2s %}
+                          <a href="../../jour/confirmation/{{present.id}}" class="list-group-item">confirmation pour {{ present.jour }}</a>
+                            {% endfor %}
+                        </div> 
+               </article>
+            
+            </section>
+             {% endfor %}
+            </body>
+            </html>
+            

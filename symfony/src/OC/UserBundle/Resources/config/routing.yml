@@ -1,0 +1,45 @@
+oc_user_homepage:
+    path:     /
+    defaults: { _controller: OCUserBundle:Default:index }
+
+oc_user_register:
+    path:    /inscription
+    defaults: { _controller: OCUserBundle:Default:register }
+
+oc_user_modification:
+    path:    /modification/{id}
+    defaults: { _controller: OCUserBundle:Default:modification }
+
+oc_user_suppression:
+    path:   administrateur/suppression
+    defaults: { _controller: OCUserBundle:Default:suppression }
+    methods:  [GET]
+
+oc_user_modification_admin: 
+    path:   /administrateur/modification/{id}
+    defaults: { _controller: OCUserBundle:Default:modificationUser }
+
+oc_user_information:
+    path:   /administrateur/information/{id}
+    defaults: { _controller: OCUserBundle:Default:information }
+
+oc_user_role:
+    path:   /administrateur/role
+    defaults: { _controller: OCUserBundle:Default:role }
+    methods: [GET]
+
+oc_user_administrateur: 
+    path:   /administrateur
+    defaults: { _controller: OCUserBundle:Default:administrateur }
+
+oc_user_active:
+    path:   /administrateur/active
+    defaults: { _controller: OCUserBundle:Default:active }
+    methods: [GET]
+
+oc_user_mot_de_passe:
+    path:   /administrateur/mot_de_passe/{id}
+    defaults: { _controller: OCUserBundle:Default:mot_de_passe }
+
+
+

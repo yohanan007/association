@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>test bibliotheque</title>
+    </head>
+    <body>
+        <h1>hello</h1>
+        
+        {% for images in image %}
+        <ul>
+            <li> {{ images.id }}</li>
+            <li>{{ images.image }}</li>
+        </ul>
+        <img src="{{ asset('uploads/images_transfer/' ~ images.image) }}">View brochure (PDF)</img>
+        {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,38 @@
+oc_gestion_homepage:
+    path:    /
+    defaults: { _controller: OCGestionBundle:Default:intro }
+
+oc_gestion_sectionpage:
+    path:     /section
+    defaults: { _controller: OCGestionBundle:Default:index }
+
+oc_gestion_articlepage:
+    path:    /article/{id}
+    defaults: { _controller: OCGestionBundle:Default:article }
+
+oc_gestion_sectionId: 
+    path:    /page/{id}
+    defaults: { _controller: OCGestionBundle:Default:sectionId }
+
+oc_gestion_section:
+    path:    /section/menu
+    defaults: { _controller: OCGestionBundle:Default:sectionMenu }
+
+oc_gestion_article:
+    path:    /article
+    defaults: { _controller: OCGestionBundle:Default:articlePage }
+
+oc_gestion_ModificationArticleId:
+    path:    /Modification/article/{id}
+    defaults: { _controller: OCGestionBundle:Default:ModificationArticleId }
+
+oc_gestion_articleGet: 
+    path:    /articleGet
+    defaults: { _controller: OCGestionBundle:Default:articleGet }
+    methods: [GET]
+
+oc_gestion_test:
+    path:    /test
+    defaults: { _controller: OCGestionBundle:Default:test }
+
+

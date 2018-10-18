@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='author' content='yohanan007'>
+        <meta name='keywords' content='css,bs, js,jquery, php, symfony, administrateur'>
+        
+        <title>
+            information user
+        </title>
+         <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    </head>
+    <body>
+        <hr>
+        <div class="container">
+  <center><h2 class="bg-dark text-white">Tableau récapitulatif des utilisateurs</h2> </center>
+ 
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>Email</th>
+        <th>
+            information supplémentaire
+        </th>
+        <th>
+            supprimer
+        </th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td><a href="administrateur/information/{{user.id}}" class="btn btn-md btn-warning">info</a></td>
+        <td><button id="{{user.id}}" class="btn btn-md btn-danger">supprimer</button></td>
+       
+     
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</div>
+ <script>
+          $(document).ready(function(){
+              $("button").click(function(){
+                  var a = $(this).attr('id');
+                  console.log('id réccuéré' + a);
+                  var adresse = 'administrateur/suppression?id='+a;
+                  console.log('adresse d envoi'  +  adresse);
+                  console.log('debut du processus de get');
+                  $.get(adresse,function(data,status){
+                      console.log('status de l opération' + status);
+                      console.log('data renvoyé par l opéartion' + data['reponse']);
+                      setTimeout(function(){location.reload();},3000);
+                  });
+              });
+          });
+      </script>
+    </body>
+    
+                
+    
+    
+</html>

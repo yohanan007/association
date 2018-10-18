@@ -1,0 +1,32 @@
+oc_auth_homepage:
+    path:     /
+    defaults: { _controller: OCAuthBundle:Default:index }
+
+oc_auth_creer:
+    path:    /creer
+    defaults: { _controller: OCAuthBundle:Default:creer }
+
+oc_auth_inscriptionJour:
+    path:    /jour/inscription/{id}
+    defaults: { _controller: OCAuthBundle:Default:inscriptionJour }
+
+oc_auth_modification_evenement_menu:
+    path:   /modification/menu
+    defaults: { _controller: OCAuthBundle:Default:modificationMenu }
+
+oc_auth_modification:
+    path:   /modification/evenement/{id}
+    defaults: { _controller: OCAuthBundle:Default:modification }
+
+oc_auth_suppression: 
+    path:    /suppression
+    defaults: { _controller: OCAuthBundle:Default:suppression }
+    methods:  [GET]
+
+oc_auth_confirmation_journee:
+    path:    /jour/confirmation/{id}
+    defaults: { _controller: OCAuthBundle:Default:confirmationJournee }
+
+oc_auth_confirmation_utilisateur: 
+    path:    /utilisateur/confirmation/{id}
+    defaults: { _controller: OCAuthBundle:Default:confirmationUtilisateur }

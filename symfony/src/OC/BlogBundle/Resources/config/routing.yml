@@ -1,0 +1,20 @@
+
+oc_blog_homepage:
+    path:     /
+    defaults: { _controller: OCBlogBundle:Default:index }
+
+oc_blog_blog:
+    path:    /blog/{id}
+    defaults: { _controller: OCBlogBundle:Default:blog }
+
+oc_blog_acceuil:
+    path:    /blog
+    defaults: { _controller: OCBlogBundle:Default:acceuil }
+
+oc_blog_test_transfer_image:
+    path:    /transfer_manuel
+    defaults: { _controller: OCBlogBundle:Default:image }
+
+oc_blog_bibliotheque:
+    path:    /bibliotheque2
+    defaults: { _controller: OCBlogBundle:Default:bibliotheque }

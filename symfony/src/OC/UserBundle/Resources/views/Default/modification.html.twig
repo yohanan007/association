@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>
+            page information et modification utilisateur {{ user.username }}
+        </title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+     
+
+ 
+ <article>
+     <div class="container">
+  <h2>information utilisateur</h2>
+  <p> tableau récapitulatif information utilisateur </p>
+  <table class="table">
+   
+    <tbody>
+           
+      <tr >
+        <td>id</td>
+        <td>{{ user.id }}</td>
+        
+      </tr>
+      <tr class="table-success">
+        <td>username</td>
+        <td>{{ user.username }}</td>
+       
+      </tr>
+      <tr >
+        <td>email</td>
+        <td>{{ user.email }} </td>
+     
+      </tr>
+      <tr class="table-success">
+          <td>adresse</td>
+          <td>{{ user.adresse }}</td>
+      </tr>
+           <tr >
+          <td>ville</td>
+          <td>{{ user.ville }}</td>
+      </tr>
+      <tr class="table-success">
+          <td>date de naissance</td>
+          <td>{{ user.dateDeNaissance|date("m/d/Y")  }} </td>
+      </tr>
+    
+    </tbody>
+  </table>
+</div>
+     
+ </article>
+ <hr>
+ <article class="container">
+       <a href="../../profile/change-password" class="btn btn-md btn-danger">changer les données</a>
+ </article>
+ 
+
+ 
+ 
+ 
+    </body>
+</html>
