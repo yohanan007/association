@@ -22,6 +22,7 @@ class DefaultController extends Controller
    
     public function indexAction()
     {
+        //test commentaire 1
         return $this->render('@OCBlog/Default/index.html.twig');
     }
     
