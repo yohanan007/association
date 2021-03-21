@@ -22,7 +22,7 @@ class DefaultController extends Controller
    
     public function indexAction()
     {
-        //test branch 2
+        //test branch 2 et commit 
         return $this->render('@OCBlog/Default/index.html.twig');
     }
     
